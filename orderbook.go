@@ -139,6 +139,24 @@ func (o *OrderModify) ToOrderPointer(orderType OrderType) *Order {
 	return NewOrder(o.orderID, o.side, orderType, o.price, o.quantity)
 }
 
+type TradeInfo struct {
+	orderID  OrderID
+	price    Price
+	quantity Quantity
+}
+
+type Trade struct {
+	bidTradeInfo *TradeInfo
+	askTradeInfo *TradeInfo
+}
+
+func NewTrade(bidTradeInfo, askTradeInfo *TradeInfo) *Trade {
+	return &Trade{
+		bidTradeInfo: bidTradeInfo,
+		askTradeInfo: askTradeInfo,
+	}
+}
+
 func main() {
 	fmt.Println("Order Book")
 }
