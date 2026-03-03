@@ -157,6 +157,14 @@ func NewTrade(bidTradeInfo, askTradeInfo *TradeInfo) *Trade {
 	}
 }
 
+func (t *Trade) GetBidTradeInfo() *TradeInfo {
+	return t.bidTradeInfo
+}
+
+func (t *Trade) GetAskTradeInfo() *TradeInfo {
+	return t.askTradeInfo
+}
+
 func main() {
 	fmt.Println("Order Book")
 }
