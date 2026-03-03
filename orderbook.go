@@ -165,6 +165,8 @@ func (t *Trade) GetAskTradeInfo() *TradeInfo {
 	return t.askTradeInfo
 }
 
+type TradeList []*Trade
+
 func main() {
 	fmt.Println("Order Book")
 }
